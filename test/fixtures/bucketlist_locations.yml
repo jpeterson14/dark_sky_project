@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visitor: one
+  dark_sky_park: one
+
+two:
+  visitor: two
+  dark_sky_park: two
