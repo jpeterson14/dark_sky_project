@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_231246) do
 
   create_table "dark_sky_parks", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.string "img_url"
     t.string "city"
     t.string "state"
