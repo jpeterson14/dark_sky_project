@@ -1,0 +1,2 @@
+module DarkSkyParksHelper
+end

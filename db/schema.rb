@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_231246) do
+ActiveRecord::Schema.define(version: 2020_11_10_210142) do
 
   create_table "bucketlist_locations", force: :cascade do |t|
     t.integer "visitor_id", null: false
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2020_11_09_231246) do
 
   create_table "visitors", force: :cascade do |t|
     t.string "username"
-    t.string "password", default: "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "bucketlist_locations", "dark_sky_parks"
