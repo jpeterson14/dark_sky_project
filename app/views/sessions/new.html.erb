@@ -1,6 +1,14 @@
+<h1> Welcome To Dark Sky Park Locator </h1>
+<% if flash[:error] %>
+    <h4 style="color: red;">
+      <%= flash[:error] %>
+    </h4>
+<% end %>
+
 <h1> Login </h1>
 <%= form_with url: sessions_path do |f| %>
     username: <%= f.text_field :username %> <br> <br>
-    password: <%= f.text_field :password %> <br> <br>
+    password: <%= f.password_field :password %> <br> <br>
     <%= f.submit "Login" %>
     <% end %>
+    <p> Not a member? <%= link_to 'Sign Up', new_visitor_path %> </p>

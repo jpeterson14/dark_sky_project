@@ -24,7 +24,7 @@ dark_sky_parks = [
         description:
             "Located in soutern California, Anza-Borrego Desert State Park is the country's second largest state park. The Park preserves the Colorado Desert, which is itself chiefly composed of the western Sonoran Desert. Set in the middle of the park, the city of Borrego Springs, California, became the world's second IDA International Dark Sky Community in 2009.",
         img_url:
-            'www.darkskypark.org/wp-content/uploads/2018/01/ABDSP-featured-700px-366px.png',
+            'https://www.darksky.org/wp-content/uploads/2018/01/ABDSP-featured-700px-366px.png',
         city: 'Borrego Springs',
         state: 'CA'
     },
@@ -65,7 +65,7 @@ dark_sky_parks = [
         state: 'CO'
     },
     {
-        name: 'Bryce Canyon Natio/nal Park',
+        name: 'Bryce Canyon National Park',
         description:
             'Bryce Canyon National Park, a sprawling reserve in southern Utah, is known for crimson-colored hoodoos, which are spire-shaped rock formations. The park’s main road leads past the expansive Bryce Amphitheater, a hoodoo-filled depression lying below the Rim Trail hiking path. It has overlooks at Sunrise Point, Sunset Point, Inspiration Point and Bryce Point.',
         img_url:
@@ -344,7 +344,7 @@ dark_sky_parks = [
         state: 'MO'
     },
     {
-        name: 'Weber County North Fork Park:',
+        name: 'Weber County North Fork Park',
         description:
             'Weber County North Fork Park is situated on 1,000 hectares of mountain valley land in Utah’s Wasatch Range north of the Ogden area. The park attracts cross-country skiers in the winter months with 12 km of groomed skiing trails at elevations between 1,770 and 1,890 meters elevation. It is also a winter venue for Nordic skiing events. In the summer, the park welcomes thousands of guests at six large group areas and 181 individual campsites, and offers hike/bike trails, sand volleyball courts, horseshoe pits, horse corrals, and more. North Fork Park has four qualities that sets it apart from many other Dark Sky Parks: urban adjacency, intense focus on wildlife, an extensive outreach program and innovative public art incorporating dark skies themes. The combination of these characteristics results in a unique dark sky experience for the approximately 2.2 million people living along the adjacent Wasatch Front, for whom the park is easily accessible. It remains a wild and rustic place that aims to provide a dark nighttime refuge for humans and wildlife alike.',
         img_url:
@@ -374,41 +374,34 @@ bucketlist_locations = [
 ]
 bucketlist_locations.each { |bucket| BucketlistLocation.create!(bucket) }
 
-reviews = [
-    {
-        visitor: Visitor.first,
-        dark_sky_park: DarkSkyPark.first,
-        comment: '10/10 would recommend'
-    },
-    {
-        visitor: Visitor.first,
-        dark_sky_park: DarkSkyPark.second,
-        comment: 'It gets spooky at night but I still love it!!!'
-    },
-    {
-        visitor: Visitor.second,
-        dark_sky_park: DarkSkyPark.all[4],
-        comment:
-            'My first park I have ever visited and will be returning each year'
-    },
-    {
-        visitor: Visitor.third,
-        dark_sky_park: DarkSkyPark.last,
-        comment: "You'll never see a prettier place than this park."
-    },
-    {
-        visitor: Visitor.fourth,
-        dark_sky_park: DarkSkyPark.all[4],
-        comment: 'I come every year here and the views are incredible.'
-    },
-    {
-        visitor: Visitor.fourth,
-        dark_sky_park: DarkSkyPark.last,
-        comment: 'This is the most beautiful place on earth!'
-    }
-]
+# likes = [
+#     {
+#         visitor: Visitor.first,
+#         dark_sky_park: DarkSkyPark.first
+#     },
+#     {
+#         visitor: Visitor.first,
+#         dark_sky_park: DarkSkyPark.second
+#     },
+#     {
+#         visitor: Visitor.second,
+#         dark_sky_park: DarkSkyPark.all[4]
+#     },
+#     {
+#         visitor: Visitor.third,
+#         dark_sky_park: DarkSkyPark.last
+#     },
+#     {
+#         visitor: Visitor.fourth,
+#         dark_sky_park: DarkSkyPark.all[4]
+#     },
+#     {
+#         visitor: Visitor.fourth,
+#         dark_sky_park: DarkSkyPark.last
+#     }
+# ]
 
-reviews.each { |review| Review.create!(review) }
+# likes.each { |like| Like.create!(like) }
 
 comments = [
     {

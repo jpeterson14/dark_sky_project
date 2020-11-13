@@ -1,0 +1,11 @@
+
+<% if flash[:errors] %>
+<div style = "color:red">
+     <%flash[:errors].each do |error| %>
+        <li><%= error %></li>
+    </div>
+    <% end %>
+    <% end %>
+<h1> Edit Account: </h1>
+<%= render partial: "form" %>
+<%= button_to 'Back', dark_sky_parks_path, method: :get %><br>
