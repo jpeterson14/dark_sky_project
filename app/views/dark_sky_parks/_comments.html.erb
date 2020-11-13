@@ -1,0 +1,16 @@
+<h4>Comments:</h4>
+<ul>
+    <% @comments.map do |comment| %>
+    <li> <%= comment.visitor.username %></em><br><%= comment.post %></li>
+    <%end%>
+</ul>
+<br>
+
+<h4>Leave A Comment:</h4>
+<%= form_with url: comments_path do |form| %>
+    <%= form.text_area :post, placeholder: "Add comment here" %>
+    <%= form.hidden_field :visitor_id, :value => session[:visitor_id] %>
+    <%= form.hidden_field :dark_sky_park_id, :value => @dark_sky_park.id %>
+    <br>
+    <%= form.submit "Submit" %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1> My Bucket List </h1>
+<% if @bucketlist_locations.empty? %>
+No parks saved yet!
+<%else %>
+<% @bucketlist_locations.each do |location| %>
+    <li> <%= link_to location.dark_sky_park.name, dark_sky_park_path(location.dark_sky_park_id) %> </li> <br> <br>
+    <% end %>
+    <% end %>
+    <%= button_to 'Back', dark_sky_parks_path, method: :get %>
+    

@@ -1,3 +1,15 @@
+<% if flash[:error] %>
+<div style = "color:red">
+    <li> <%= flash[:error] %> </li>
+    </div>
+    <% end %>
+<% if flash[:errors] %>
+<div style = "color:red">
+     <%flash[:errors].each do |error| %>
+        <li><%= error %></li>
+    </div>
+    <% end %>
+    <% end %>
 <h1> Sign Up Here: </h1>
 <%= render partial: "form" %>
 <p> Existing member? <%= link_to 'Login', new_session_path %> </p>

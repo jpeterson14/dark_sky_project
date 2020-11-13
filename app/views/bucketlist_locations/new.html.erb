@@ -1,0 +1,13 @@
+<% if flash[:error] %>
+<div style = "color:red">
+    <li> <%= flash[:error] %> </li>
+    </div>
+    <% end %>
+<h1> Let's Add To Our Adventure List </h1>
+<%= form_for @bucketlist_location do |f| %>
+    Dark Sky Park: <%=f.collection_select :dark_sky_park_id, DarkSkyPark.all, :id, :name %> <br> <br>
+    <%= f.hidden_field :visitor_id, :value => session[:visitor_id] %>
+    <%= f.submit "Add to My Bucket List" %>
+    <% end %>
+    <%= button_to 'Back', dark_sky_parks_path, method: :get %>
+

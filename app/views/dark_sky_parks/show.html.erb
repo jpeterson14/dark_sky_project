@@ -1,5 +1,28 @@
-<h1><%=  @dark_sky_park.name %>
-<img src='<%= @dark_sky_park.img_url %>' alt="" /> <br />
-<p> Description: <%= @dark_sky_park.description %></p> <br />
-<p> Location: <%= @dark_sky_park.city %>, <%= @dark_sky_park.state %></p> <br />
+
+<h1><%=  @dark_sky_park.name %> </h1> <br><br>
+<img src='<%= @dark_sky_park.img_url %>'> <br> <br>
+<p> Description: <%= @dark_sky_park.description %></p> <br>
+<p> Location: <%= @dark_sky_park.city %>, <%= @dark_sky_park.state %></p> <br><br><br>
+
+<p> <%= @dark_sky_park.likes.count %> <%= (@dark_sky_park.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
+<% already_liked = @dark_sky_park.likes.find {|like| like.visitor_id == current_visitor.id} %>
+<% if already_liked %>
+<%= button_to 'Unlike', dark_sky_park_like_path(@dark_sky_park, already_liked), method: :delete %>
+<% else %>
+<%= button_to 'Like', dark_sky_park_likes_path(@dark_sky_park), method: :post %> <br>
+<% end %>
+
+<%= render partial: "comments"%> <br>
+
+<%= button_to 'Add A Park To My Bucket List', new_bucketlist_location_path, method: :get %><br>
+<%= button_to 'Back', dark_sky_parks_path, method: :get %><br>
+
+
+
+
+
+
+
+
+
 

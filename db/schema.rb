@@ -42,14 +42,13 @@ ActiveRecord::Schema.define(version: 2020_11_10_210142) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.integer "visitor_id", null: false
     t.integer "dark_sky_park_id", null: false
-    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["dark_sky_park_id"], name: "index_reviews_on_dark_sky_park_id"
-    t.index ["visitor_id"], name: "index_reviews_on_visitor_id"
+    t.index ["dark_sky_park_id"], name: "index_likes_on_dark_sky_park_id"
+    t.index ["visitor_id"], name: "index_likes_on_visitor_id"
   end
 
   create_table "visitors", force: :cascade do |t|
@@ -63,6 +62,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_210142) do
   add_foreign_key "bucketlist_locations", "visitors"
   add_foreign_key "comments", "dark_sky_parks"
   add_foreign_key "comments", "visitors"
-  add_foreign_key "reviews", "dark_sky_parks"
-  add_foreign_key "reviews", "visitors"
+  add_foreign_key "likes", "dark_sky_parks"
+  add_foreign_key "likes", "visitors"
 end

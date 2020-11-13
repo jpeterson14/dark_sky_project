@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<center>
   <head>
     <title>DarkSkyProject</title>
     <%= csrf_meta_tags %>
@@ -7,8 +8,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
+  
 
   <body>
+ 
     <%= yield %>
+    
   </body>
+  
+  </center>
 </html>
