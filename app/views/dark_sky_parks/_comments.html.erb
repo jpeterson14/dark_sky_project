@@ -1,7 +1,7 @@
 <h4>Comments:</h4>
 <ul>
     <% @comments.map do |comment| %>
-    <li> <%= comment.visitor.username %></em><br><%= comment.post %></li>
+    <li>User: <%=  comment.visitor.username %></em><br><%= comment.post %></li>
     <%end%>
 </ul>
 <br>

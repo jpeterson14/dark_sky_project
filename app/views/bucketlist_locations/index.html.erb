@@ -6,5 +6,10 @@ No parks saved yet!
     <li> <%= link_to location.dark_sky_park.name, dark_sky_park_path(location.dark_sky_park_id) %> </li> <br> <br>
     <% end %>
     <% end %>
-    <%= button_to 'Back', dark_sky_parks_path, method: :get %>
+    <%= button_to 'Back', dark_sky_parks_path, method: :get %> <br>
+    <%= button_to 'Add A Park To My Bucket List', new_bucketlist_location_path, method: :get %><br>
+    <%= button_to 'Delete A Park', bucketlist_location_path(@bucketlist_locations), method: :get %> <br>
+
+    
+
     

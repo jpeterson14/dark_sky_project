@@ -30,10 +30,20 @@ class BucketlistLocationsController < ApplicationController
     end
     def show
        @bucketlist_location = BucketlistLocation.find_by(id: params[:bucketlist_location_id])
+       @visitor = current_visitor
+        @bucketlist_locations = @visitor.bucketlist_locations
     end
     
 
     def destroy
+        @visitor = current_visitor
+        @bucketlist_locations = @visitor.bucketlist_locations
+        @location = @bucketlist_locations.find_by(dark_sky_park_id: params[:dark_sky_park_id])
+        @location.destroy
+        redirect_to bucketlist_locations_path
+        
+
+
     end
     private
     def bl_params
