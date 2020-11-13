@@ -1,0 +1,9 @@
+<%if current_visitor %>
+<h1> Hello, <%= current_visitor.username %> </h1>
+<% end %>
+<h1> All Dark Sky Parks</h1>
+<ul>
+<%= @dark_sky_parks.each do |park| %>
+    <li> <%= link_to park.name, dark_sky_park_path(park) %>
+    <% end %>
+</ul>
