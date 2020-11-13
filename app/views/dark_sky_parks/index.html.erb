@@ -1,13 +1,13 @@
 
 <%if current_visitor %>
-<h1> Hello, <%= current_visitor.username %> </h1>
+<h3> Welcome, <%= current_visitor.username %>! </h3>
 <% end %>
 <h1> Certified IDA Dark Sky Parks- United States</h1>
-<ul>
 <% @dark_sky_parks.each do |park| %>
     <li> <%= link_to park.name, dark_sky_park_path(park) %> </li>
     <% end %>
-</ul>
+
+
 
 
 <%= button_to 'About Page', about_path, method: :get %> <br>

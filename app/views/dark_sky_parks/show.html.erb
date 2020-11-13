@@ -14,8 +14,10 @@
 
 <%= render partial: "comments"%> <br>
 
-<%= button_to 'Add A Park To My Bucket List', new_bucketlist_location_path, method: :get %><br>
-<%= button_to 'Back', dark_sky_parks_path, method: :get %><br>
+<%= button_to 'Add or Remove a Park From Bucket List', new_bucketlist_location_path, method: :get %><br>
+<%= button_to 'Back to List of Dark Sky Parks', dark_sky_parks_path, method: :get %><br>
+<%= button_to "Logout", session_path(current_visitor.id), :method => :delete %><br><br>
+
 
 
 

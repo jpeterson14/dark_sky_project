@@ -7,7 +7,12 @@
 <%= form_for @bucketlist_location do |f| %>
     Dark Sky Park: <%=f.collection_select :dark_sky_park_id, DarkSkyPark.all, :id, :name %> <br> <br>
     <%= f.hidden_field :visitor_id, :value => session[:visitor_id] %>
-    <%= f.submit "Add to My Bucket List" %>
+    <%= f.submit "Add to My Bucket List" %><br><br>
     <% end %>
-    <%= button_to 'Back', dark_sky_parks_path, method: :get %>
+    <%= button_to 'View My Bucket List', bucketlist_locations_path, method: :get %><br>
+
+    <%= button_to 'Back To List of Dark Sky Parks', dark_sky_parks_path, method: :get %><br>
+
+    <%= button_to "Logout", session_path(current_visitor.id), :method => :delete %><br><br>
+
 

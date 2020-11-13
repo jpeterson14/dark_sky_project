@@ -1,10 +1,16 @@
+Visitor.destroy_all
+DarkSkyPark.destroy_all
+BucketlistLocation.destroy_all
+Comment.destroy_all
+
+
 
 visitors = [
-    { username: 'justine', password: 'secret' },
+    { username: 'justine', password: 'justine' },
     { username: 'jake123', password: 'password' },
-    { username: 'Leeloo', password: 'cat' },
+    { username: 'Leeloo', password: 'kittycat' },
     { username: 'Yokai', password: 'girlfriend' },
-    { username: 'Perry', password: 'bubba' }
+    { username: 'Perry', password: 'perry' }
 ]
 
 visitors.each { |visitor| Visitor.create!(visitor) }
